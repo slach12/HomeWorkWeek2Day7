@@ -5,14 +5,14 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Podaj liczbę :");
-            int liczba = int.Parse(Console.ReadLine());
-            if (liczba % 2 != 0)
+            int number = int.Parse(Console.ReadLine());
+            if (number % 2 != 0)
             {
-                Console.WriteLine($"{liczba} jest nie parzysta");
+                Console.WriteLine($"{number} jest nie parzysta");
             }
             else 
             {
-                Console.WriteLine($"{liczba} jest parzysta");
+                Console.WriteLine($"{number} jest parzysta");
             }
         }
     }

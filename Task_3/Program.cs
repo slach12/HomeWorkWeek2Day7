@@ -5,18 +5,18 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Podaj liczbę :");
-            int liczba = int.Parse(Console.ReadLine());
-            if (liczba > 0) 
+            int number = int.Parse(Console.ReadLine());
+            if (number > 0) 
             {
-                Console.WriteLine($"{liczba} jest liczbą dodatnią");
+                Console.WriteLine($"{number} jest liczbą dodatnią");
             }
-            else if (liczba < 0) 
+            else if (number < 0) 
             {
-                Console.WriteLine($"{liczba} jest liczbą ujemną");
+                Console.WriteLine($"{number} jest liczbą ujemną");
             }
             else
             {
-                Console.WriteLine($"{liczba} nie jest ani liczbą dodatnią ani ujemną");
+                Console.WriteLine($"{number} nie jest ani liczbą dodatnią ani ujemną");
             }
             
             Console.WriteLine("Hello, World!");

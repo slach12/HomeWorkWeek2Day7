@@ -1,27 +1,37 @@
 ﻿namespace Task_5
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Podaj swój wiek:");
-            int age = int.Parse(Console.ReadLine());
-            if (age <21) 
+            int age;
+            bool correctAge = int.TryParse(Console.ReadLine(), out age);
+            correctAge = correctAge && age > 0;
+            if (correctAge)
             {
-                Console.WriteLine("Jesteś za młody , żeby kandydować.");
+                if (age < 21)
+                {
+                    Console.WriteLine("Jesteś za młody , żeby kandydować.");
+                }
+                if (age >= 35)
+                {
+                    Console.WriteLine("Możesz kandydować na posła, senatora i prezydenta.");
+                }
+                else if (age >= 30)
+                {
+                    Console.WriteLine("Możesz kandydować na posła i senatora.");
+                }
+                else if (age >= 21)
+                {
+                    Console.WriteLine("Możesz kandydować na posła.");
+                }
             }
-            if (age >= 21)
+            else
             {
-                Console.WriteLine("Możesz kandydować na posła.");
+                Console.WriteLine("Nie podałeś wieku.");
             }
-            if(age >= 30)
-            {
-                Console.WriteLine("Możesz kandydować na senatora.");
-            }
-            if (age >= 35)
-            {
-                Console.WriteLine("Możesz kandydować na prezydenta.");
-            }
+
         }
     }
 }

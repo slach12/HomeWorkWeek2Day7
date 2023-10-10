@@ -5,17 +5,27 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Podaj swój wzrost w cm :");
-            double height = double.Parse(Console.ReadLine());
-            if (height < 150)
+            double height ;
+            bool correctHeight = double.TryParse(Console.ReadLine(), out height);
+            correctHeight = correctHeight && height > 0;
+            if (correctHeight)
             {
-                Console.WriteLine("Jesteś krasnoludem");
-            } else if (height > 240)
-            {
-                Console.WriteLine("Jesteś olbrzymem");
+                if (height < 150)
+                {
+                    Console.WriteLine("Jesteś krasnoludem");
+                }
+                else if (height > 240)
+                {
+                    Console.WriteLine("Jesteś olbrzymem");
+                }
+                else
+                {
+                    Console.WriteLine("Jesteś człowiekiem");
+                }
             }
             else
             {
-                Console.WriteLine("Jesteś człowiekiem");
+                Console.WriteLine("Wprowadzony ciąg nie jest prawidłowym wzrostem.");
             }
         }
     }

@@ -1,25 +1,33 @@
 ﻿namespace Task_3
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Podaj liczbę :");
-            int number = int.Parse(Console.ReadLine());
-            if (number > 0) 
+            int number;
+            if (int.TryParse(Console.ReadLine(), out number))
             {
-                Console.WriteLine($"{number} jest liczbą dodatnią");
+                if (number > 0)
+                {
+                    Console.WriteLine($"{number} jest liczbą dodatnią");
+                }
+                else if (number < 0)
+                {
+                    Console.WriteLine($"{number} jest liczbą ujemną");
+                }
+                else
+                {
+                    Console.WriteLine($"{number} nie jest ani liczbą dodatnią ani ujemną");
+                }
             }
-            else if (number < 0) 
-            {
-                Console.WriteLine($"{number} jest liczbą ujemną");
-            }
-            else
-            {
-                Console.WriteLine($"{number} nie jest ani liczbą dodatnią ani ujemną");
+            else 
+            { 
+                Console.WriteLine("Nie wprowadzono liczby.");
             }
             
-            Console.WriteLine("Hello, World!");
+            
+            
         }
     }
 }
